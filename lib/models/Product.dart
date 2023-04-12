@@ -22,7 +22,7 @@ List<Product> products = [
     price: 234,
     size: 12,
     description: dummyText,
-    image: 'assets/images/img1.jpg',
+    image: 'assets/images/bag1.png',
     color: const Color(0xFF3D82AE),
   ),
   Product(
@@ -31,7 +31,7 @@ List<Product> products = [
     price: 234,
     size: 8,
     description: dummyText,
-    image: 'assets/images/img1.jpg',
+    image: 'assets/images/bag2.png',
     color: const Color(0xFFD3A984), // Product
   ),
   Product(
@@ -40,7 +40,7 @@ List<Product> products = [
     price: 234,
     size: 10,
     description: dummyText,
-    image: 'assets/images/img1.jpg',
+    image: 'assets/images/bag3.png',
     color: const Color(0xFF989493), // Product
   ),
   Product(
@@ -49,7 +49,7 @@ List<Product> products = [
     price: 234,
     size: 11,
     description: dummyText,
-    image: 'assets/images/img1.jpg',
+    image: 'assets/images/bag4.png',
     color: const Color(0xFFD3A984), // Product
   ),
   Product(
@@ -58,7 +58,7 @@ List<Product> products = [
     price: 234,
     size: 12,
     description: dummyText,
-    image: 'assets/images/img1.jpg',
+    image: 'assets/images/bag5.png',
     color: const Color(0xFFFB7883), // Product
   ),
   Product(
@@ -67,7 +67,7 @@ List<Product> products = [
     price: 234,
     size: 12,
     description: dummyText,
-    image: 'assets/images/img1.jpg',
+    image: 'assets/images/bag6.png',
     color: const Color(0xFFAEAEAE), // Product
   ),
 ];

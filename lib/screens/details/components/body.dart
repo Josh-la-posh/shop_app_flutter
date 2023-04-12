@@ -1,9 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/screens/details/components/product_title_with_image.dart';
 import 'package:shop_app/screens/details/components/ColorAndSize.dart';
 import 'package:shop_app/screens/details/components/description.dart';
+import 'package:shop_app/screens/details/components/counter_with_fav_btn.dart';
+import 'package:shop_app/screens/details/components/add_to_cart.dart';
 
 class Body extends StatelessWidget {
   final Product product;
@@ -35,8 +39,12 @@ class Body extends StatelessWidget {
                 child: Column(
                   children: [
                     ColorAndSize(product: product),
+                    SizedBox(height: kDefaultPadding / 2,),
                     Description(product: product),
-                    CartCounter(),
+                    SizedBox(height: kDefaultPadding / 2,),
+                    CounterWithFavBtn(),
+                    SizedBox(height: kDefaultPadding / 2,),
+                    AddToCart(product: product)
                   ],
                 ),
               ),
@@ -46,61 +54,5 @@ class Body extends StatelessWidget {
         )
       ],
     ));
-  }
-}
-
-class CartCounter extends StatefulWidget {
-  const CartCounter({Key? key}) : super(key: key);
-
-  @override
-  State<CartCounter> createState() => _CartCounterState();
-}
-
-class _CartCounterState extends State<CartCounter> {
-  int numOfItem = 1;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        buildOutlinedButton(
-            icon: Icons.remove,
-            press: () {
-              if (numOfItem > 1) {
-                setState(() {
-                  numOfItem--;
-                });
-              }
-            }),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
-          child: Text(
-            numOfItem.toString().padLeft(2, "0"),
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-        ),
-        buildOutlinedButton(
-            icon: Icons.add,
-            press: () {
-              setState(() {
-                numOfItem++;
-              });
-            }),
-      ],
-    );
-  }
-
-  SizedBox buildOutlinedButton(
-      {required IconData icon, required press}) {
-    return SizedBox(
-      width: 40,
-      height: 32,
-      child: Padding(
-        padding: EdgeInsets.zero,
-        child: IconButton(
-          onPressed: press,
-          icon: Icon(icon),
-        ),
-      ),
-    );
   }
 }
